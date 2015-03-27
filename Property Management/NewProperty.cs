@@ -6,20 +6,29 @@ using System.Drawing;
 
 namespace Property_Management_and_Analysis
 {
-	public partial class Cervical : Form
+	public partial class NewProperty : Form
 	{
-		public Cervical()
+		#region Initialisation
+		public NewProperty()
 		{
 			if (ActiveForm != null)
 				Location = new Point(ActiveForm.Location.X + 100, ActiveForm.Location.Y + 100);
 			InitializeComponent();
 			pictureBoxClose.BackgroundImage = Resources.Close;
 			buttonMainTitle.BackgroundImage = Resources.button_Blue_Small;
-			BackgroundImage = Resources.MainBackground_Green_Form;
+			buttonFees.BackgroundImage = Resources.button_Blue_Small;
+			BackgroundImage = Resources.Background_Blue;
 			BackgroundImageLayout = ImageLayout.Stretch;
-			panel1.BackgroundImage = Resources.Background_Blue;
 		}
 
+		private void NewProperty_Load(object sender, EventArgs e)
+		{
+			pictureBoxOK.Image = Tools.GetIcon(Resources.Ok, 40);
+		}
+
+		#endregion
+
+		#region Settings
 		protected override CreateParams CreateParams
 		{
 			get
@@ -48,20 +57,14 @@ namespace Property_Management_and_Analysis
 		{
 			FormDrag.formDrag_MouseUp(e);
 		}
+		#endregion
 
-		private void DomesticActivities_Load(object sender, EventArgs e)
-		{
-			pictureBoxOK.Image = Tools.GetIcon(Resources.Ok, 40);
-			pictureBoxCancel.Image = Tools.GetIcon(Resources.Cancel, 40);
-		}
-
-		private void pictureBoxCancel_Click(object sender, EventArgs e)
-		{
-			Close();
-		}
+		#region Close
 
 		private void pictureBoxOK_Click(object sender, EventArgs e)
 		{
+			GlobalVar.PropertyAddress.Add(textBoxPropertyAddress.Text);
+			GlobalVar.PurchasePrice.Add(textBoxPurchasePrice.Text);
 			Close();
 		}
 
@@ -69,6 +72,14 @@ namespace Property_Management_and_Analysis
 		{
 			Close();
 		}
+		#endregion
 
+		private void buttonFees_Click(object sender, EventArgs e)
+		{
+			var fees = new Fees();
+			fees.ShowDialog();
+		}
+
+		
 	}
 }

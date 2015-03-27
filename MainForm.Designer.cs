@@ -30,17 +30,20 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.SaveAll = new System.Windows.Forms.PictureBox();
 			this.printDialog1 = new System.Windows.Forms.PrintDialog();
-			this.buttonPrint = new System.Windows.Forms.Button();
 			this.pictureBoxClose = new System.Windows.Forms.PictureBox();
 			this.buttonMainTitle = new System.Windows.Forms.Button();
 			this.panelMainPoints = new System.Windows.Forms.Panel();
-			this.buttonLifeStyle = new System.Windows.Forms.Button();
 			this.buttonInstructions = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.SaveAll)).BeginInit();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.MainMenu = new System.Windows.Forms.ToolStripMenuItem();
+			this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
-			this.panelMainPoints.SuspendLayout();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// toolTip1
@@ -49,33 +52,9 @@
 			this.toolTip1.InitialDelay = 500;
 			this.toolTip1.ReshowDelay = 100;
 			// 
-			// SaveAll
-			// 
-			this.SaveAll.BackColor = System.Drawing.Color.Transparent;
-			this.SaveAll.Location = new System.Drawing.Point(858, 1147);
-			this.SaveAll.Name = "SaveAll";
-			this.SaveAll.Size = new System.Drawing.Size(200, 40);
-			this.SaveAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.SaveAll.TabIndex = 70;
-			this.SaveAll.TabStop = false;
-			this.SaveAll.Tag = "20";
-			this.toolTip1.SetToolTip(this.SaveAll, "This will Save all settings and lists. ");
-			this.SaveAll.Click += new System.EventHandler(this.SaveAll_Click);
-			// 
 			// printDialog1
 			// 
 			this.printDialog1.UseEXDialog = true;
-			// 
-			// buttonPrint
-			// 
-			this.buttonPrint.Location = new System.Drawing.Point(713, 1135);
-			this.buttonPrint.Name = "buttonPrint";
-			this.buttonPrint.Size = new System.Drawing.Size(84, 60);
-			this.buttonPrint.TabIndex = 83;
-			this.buttonPrint.Text = "Print Summary";
-			this.buttonPrint.UseVisualStyleBackColor = true;
-			this.buttonPrint.Visible = false;
-			this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
 			// 
 			// pictureBoxClose
 			// 
@@ -107,35 +86,85 @@
 			// 
 			this.panelMainPoints.BackColor = System.Drawing.Color.Transparent;
 			this.panelMainPoints.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.panelMainPoints.Controls.Add(this.buttonLifeStyle);
-			this.panelMainPoints.Location = new System.Drawing.Point(8, 101);
+			this.panelMainPoints.Location = new System.Drawing.Point(8, 208);
 			this.panelMainPoints.Name = "panelMainPoints";
-			this.panelMainPoints.Size = new System.Drawing.Size(1070, 674);
+			this.panelMainPoints.Size = new System.Drawing.Size(1070, 567);
 			this.panelMainPoints.TabIndex = 83;
-			// 
-			// buttonLifeStyle
-			// 
-			this.buttonLifeStyle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.buttonLifeStyle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.buttonLifeStyle.Location = new System.Drawing.Point(17, 606);
-			this.buttonLifeStyle.Name = "buttonLifeStyle";
-			this.buttonLifeStyle.Size = new System.Drawing.Size(337, 44);
-			this.buttonLifeStyle.TabIndex = 89;
-			this.buttonLifeStyle.Text = "Click to complete Life Style Assessment";
-			this.buttonLifeStyle.UseVisualStyleBackColor = true;
 			// 
 			// buttonInstructions
 			// 
 			this.buttonInstructions.BackColor = System.Drawing.Color.Transparent;
 			this.buttonInstructions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.buttonInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.buttonInstructions.Location = new System.Drawing.Point(606, 60);
+			this.buttonInstructions.Location = new System.Drawing.Point(200, 154);
 			this.buttonInstructions.Name = "buttonInstructions";
 			this.buttonInstructions.Size = new System.Drawing.Size(149, 34);
 			this.buttonInstructions.TabIndex = 91;
 			this.buttonInstructions.Text = "Instructions";
 			this.buttonInstructions.UseVisualStyleBackColor = false;
 			this.buttonInstructions.Click += new System.EventHandler(this.buttonInstructions_Click);
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+			this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainMenu});
+			this.menuStrip1.Location = new System.Drawing.Point(12, 64);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(200, 36);
+			this.menuStrip1.TabIndex = 92;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// MainMenu
+			// 
+			this.MainMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.printToolStripMenuItem,
+            this.closeToolStripMenuItem});
+			this.MainMenu.Font = new System.Drawing.Font("Segoe UI", 10F);
+			this.MainMenu.Name = "MainMenu";
+			this.MainMenu.Size = new System.Drawing.Size(54, 32);
+			this.MainMenu.Text = "File";
+			// 
+			// newToolStripMenuItem
+			// 
+			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+			this.newToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
+			this.newToolStripMenuItem.Text = "New";
+			this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+			// 
+			// openToolStripMenuItem
+			// 
+			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
+			this.openToolStripMenuItem.Text = "Open";
+			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+			// 
+			// saveToolStripMenuItem
+			// 
+			this.saveToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+			this.saveToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
+			this.saveToolStripMenuItem.Text = "Save";
+			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+			// 
+			// printToolStripMenuItem
+			// 
+			this.printToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+			this.printToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
+			this.printToolStripMenuItem.Text = "Print";
+			// 
+			// closeToolStripMenuItem
+			// 
+			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(198, 32);
+			this.closeToolStripMenuItem.Text = "Close";
+			this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
 			// 
 			// MainForm
 			// 
@@ -148,8 +177,7 @@
 			this.Controls.Add(this.panelMainPoints);
 			this.Controls.Add(this.buttonMainTitle);
 			this.Controls.Add(this.pictureBoxClose);
-			this.Controls.Add(this.buttonPrint);
-			this.Controls.Add(this.SaveAll);
+			this.Controls.Add(this.menuStrip1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Location = new System.Drawing.Point(300, 50);
 			this.MaximumSize = new System.Drawing.Size(1090, 1200);
@@ -160,9 +188,9 @@
     "ng                 ";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.MainForm_Load);
-			((System.ComponentModel.ISupportInitialize)(this.SaveAll)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
-			this.panelMainPoints.ResumeLayout(false);
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -171,14 +199,18 @@
 		#endregion
 
 		private System.Windows.Forms.ToolTip toolTip1;
-		private System.Windows.Forms.PictureBox SaveAll;
 		private System.Windows.Forms.PrintDialog printDialog1;
-		private System.Windows.Forms.Button buttonPrint;
 		private System.Windows.Forms.PictureBox pictureBoxClose;
 		private System.Windows.Forms.Button buttonMainTitle;
 		private System.Windows.Forms.Panel panelMainPoints;
-		private System.Windows.Forms.Button buttonLifeStyle;
 		private System.Windows.Forms.Button buttonInstructions;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem MainMenu;
+		private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
 	}
 }
 

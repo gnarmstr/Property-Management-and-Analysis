@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Property_Management_and_Analysis
 {
@@ -34,15 +35,20 @@ namespace Property_Management_and_Analysis
 
 		public static bool DisclaimerCheck;
 
-		public static bool DisableWarning;
-
-		public static bool WarningVisible;
-
 		public static bool dragging;
 
 		public static int offsetX;
 
 		public static int offsetY;
+
+		public static List<string> PropertyAddress = new List<string>();
+
+		public static List<string> PurchasePrice = new List<string>();
+
+		public static List<string> Description = new List<string>();
+
+		public static List<string> Fees = new List<string>();
+
 
 	}
 }

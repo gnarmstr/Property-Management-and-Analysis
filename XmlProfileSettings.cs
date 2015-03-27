@@ -18,7 +18,7 @@ namespace Property_Management_and_Analysis
 			try
 			{
 				_documentPath =
-					System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DVA Compensation Calculator",
+					System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Property Management and Analysis",
 										   "Settings.xml");
 				if (!System.IO.Directory.Exists(System.IO.Path.GetDirectoryName(_documentPath)))
 					System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(_documentPath));
@@ -123,15 +123,6 @@ namespace Property_Management_and_Analysis
 		{
 			Profiles,
 			AppSettings,
-			UpperLimb,
-			LowerLimb,
-			LifeStyle,
-			Back,
-			Hearing,
-			Nose,
-			Throat,
-			Eyes,
-			EmotionalBehaviour,
 			Other
 		};
 

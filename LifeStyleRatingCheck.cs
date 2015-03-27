@@ -38,24 +38,11 @@ namespace Property_Management_and_Analysis
 
 		private void DomesticActivities_Load(object sender, EventArgs e)
 		{
-			pictureBoxYes.Image = Tools.GetIcon(Resources.Ok, 40);
-			if (GlobalVar.WarningVisible)
-			{
-				checkBoxDisableWarning.Visible = true;
-			}
-			if (GlobalVar.DisableWarning)
-			{
-				Close();
-			}
+			
 		}
 
 		private void pictureBoxYes_Click(object sender, EventArgs e)
 		{
-			GlobalVar.WarningVisible = true;
-			if (checkBoxDisableWarning.Checked)
-			{
-				GlobalVar.DisableWarning = true;
-			}
 			Close();
 		}
 	}

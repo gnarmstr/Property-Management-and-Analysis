@@ -22,11 +22,11 @@ namespace Property_Management_and_Analysis
 		{
 			InitializeComponent();
 			Settings();
-			getLifeStyleWar();
-			getLifeStylePeace();
-			getActuaryTable();
-			getCombinedValue();
-			getLimbsAgeAdjust();
+			//getLifeStyleWar();
+			//getLifeStylePeace();
+			//getActuaryTable();
+			//getCombinedValue();
+			//getLimbsAgeAdjust();
 			LoadData();
 			UpdateAll();
 			GlobalVar.startup = false;
@@ -54,20 +54,20 @@ namespace Property_Management_and_Analysis
 			MaximumSize = new Size(725, 790);
 			GlobalVar.SettingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
 				"Property Management and Analysis");
-			SaveAll.Image = Tools.ResizeImage(Resources.Save, 130, 30);
 			GlobalVar.ExcelData = new[]
 			{
 				GlobalVar.LifeStyleWar, GlobalVar.LifeStylePeace, GlobalVar.ActuaryTable, GlobalVar.CombineValue,
 				GlobalVar.LimbsAgeAdjust
 			};
+
+
 			
 			GlobalVar.startup = true;
 
-			panelMainPoints.BackgroundImage = Resources.Bones_Blue_Small;
-			BackgroundImage = Resources.MainBackground_Green_Small1;
+	//		panelMainPoints.BackgroundImage = Resources.Bones_Blue_Small;
+			BackgroundImage = Resources.Background_Blue;
 			BackgroundImageLayout = ImageLayout.Stretch;
 			buttonInstructions.BackgroundImage = Resources.button_Blue_Small;
-			buttonLifeStyle.BackgroundImage = Resources.Button_Green;
 			pictureBoxClose.BackgroundImage = Resources.Close;
 			buttonMainTitle.BackgroundImage = Resources.button_Blue_Small;
 
@@ -94,13 +94,13 @@ namespace Property_Management_and_Analysis
 		#region Main Form Load
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			var disclaimer = new Disclaimer();
-			disclaimer.ShowDialog();
-			if (GlobalVar.DisclaimerCheck == false)
-			{
-				SaveMessage.SaveClose = 2;
-				Application.Exit();
-			}
+			//var disclaimer = new Disclaimer();
+			//disclaimer.ShowDialog();
+			//if (GlobalVar.DisclaimerCheck == false)
+			//{
+			//	SaveMessage.SaveClose = 2;
+			//	Application.Exit();
+			//}
 			if (GlobalVar.FirstTimeStart)
 			{
 				var firstTime = new FirstTime();
@@ -221,16 +221,6 @@ namespace Property_Management_and_Analysis
 		}
 		#endregion
 
-		#region Print Summary Page
-
-		private void buttonPrint_Click(object sender, EventArgs e)
-		{
-			var printSummary = new PrintSummary();
-			printSummary.ShowDialog();
-		}
-
-		#endregion
-
 		#region Drag Main Form around
 
 		private void buttonMainTitle_MouseDown(object sender, MouseEventArgs e)
@@ -301,12 +291,30 @@ namespace Property_Management_and_Analysis
 			var okMessage = new OkMessage();
 			okMessage.ShowDialog();
 		}
+		#endregion
 
-		private void SaveAll_Click(object sender, EventArgs e)
+		private void newToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var newProperty = new NewProperty();
+			newProperty.ShowDialog();
+		}
+
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Save();
 		}
-		#endregion
+
+		private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var saveMessage = new SaveMessage();
+			saveMessage.ShowDialog();
+			Close();
+		}
+
+		private void openToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
 
 	}
 }
